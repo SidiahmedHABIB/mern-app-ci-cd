@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: server
+  template:
+    metadata:
+      labels:
+        app: server
+    spec:
+      containers:
+        - name: server
+          image: sidiahmedhbb/mern-app-server:latest  # Replace [username] with your Docker username
+          ports:
+              - containerPort: 5000
+          env:
+          - name: MONGO_URI
+            value: "mongodb://mongodb-service:27017/employees"
