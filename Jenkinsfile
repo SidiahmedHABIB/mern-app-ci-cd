@@ -12,7 +12,7 @@ pipeline {
     stage('Checkout') {
       steps {
         git branch: 'main',
-            url: 'git@github.com:SidiahmedHABIB/mern-app-ci-cd.git',
+            url: 'https://github.com/SidiahmedHABIB/mern-app-ci-cd.git',
             credentialsId: 'git'
       }
     }
